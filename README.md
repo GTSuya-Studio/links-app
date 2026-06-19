@@ -1,19 +1,19 @@
 # Links App
 
-A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/MariaDB — no framework, no build step, no dependencies. Organize your links into categories and subcategories, optionally lock sensitive categories behind a PIN code, and browse everything through a clean, fast, searchable interface that works just as well on a phone as on a desktop.
+A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/MariaDB : no framework, no build step, no dependencies. Organize your links into categories and subcategories, optionally lock sensitive categories behind a PIN code, and browse everything through a clean, fast, searchable interface that works just as well on a phone as on a desktop.
 
 ## Features
 
-- **Categories & subcategories** — organize links in a two-level hierarchy, fully drag-and-drop reorderable.
-- **Automatic metadata fetching** — paste a URL and the title/description are fetched for you (with SSRF protection).
-- **Favicon caching** — favicons are downloaded once and served locally instead of hot-linking on every page view.
-- **Search** — instant search across all your links (admin and public site).
-- **PIN-protected categories** — lock specific categories behind a 4-digit PIN, independent expiry per category.
-- **Light/dark theme** — flash-free theme switching, respects system preference by default.
-- **Multi-language interface** — French and English included out of the box; adding a new language is a single file (see [Adding a language](#adding-a-language)).
-- **Single admin account** — simple password-based admin login, no user management overhead for a personal tool.
-- **JSON export** — back up all your categories, subcategories, and links in one click.
-- **No framework, no build step** — plain PHP 8, vanilla JS, hand-written CSS. Deploy by copying files to a web server.
+- **Categories & subcategories** : organize links in a two-level hierarchy, fully drag-and-drop reorderable.
+- **Automatic metadata fetching** : paste a URL and the title/description are fetched for you (with SSRF protection).
+- **Favicon caching** : favicons are downloaded once and served locally instead of hot-linking on every page view.
+- **Search** : instant search across all your links (admin and public site).
+- **PIN-protected categories** : lock specific categories behind a 4-digit PIN, independent expiry per category.
+- **Light/dark theme** : flash-free theme switching, respects system preference by default.
+- **Multi-language interface** : French and English included out of the box; adding a new language is a single file (see [Adding a language](#adding-a-language)).
+- **Single admin account** : simple password-based admin login, no user management overhead for a personal tool.
+- **JSON export** : back up all your categories, subcategories, and links in one click.
+- **No framework, no build step** : plain PHP 8, vanilla JS, hand-written CSS. Deploy by copying files to a web server.
 
 ## Requirements
 
@@ -35,7 +35,7 @@ A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/Maria
    ```bash
    mysql -u youruser -p your_database_name < install.sql
    ```
-   This creates the four required tables (`categories`, `subcategories`, `links`, `settings`) and seeds a default admin password of `admin` — you'll be prompted to change it as soon as you log in.
+   This creates the four required tables (`categories`, `subcategories`, `links`, `settings`) and seeds a default admin password of `admin` : you'll be prompted to change it as soon as you log in.
 
 3. **Configure the app**
 
@@ -44,14 +44,14 @@ A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/Maria
    cp config.example.php config.php
    ```
    Open `config.php` and set:
-   - `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS` — your database credentials.
-   - `BASE_URL` — the full URL where the app will be served, no trailing slash (e.g. `https://links.example.com`).
-   - `SESSION_SECRET` — a long random string used to sign PIN-unlock cookies. Generate one with:
+   - `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS` : your database credentials.
+   - `BASE_URL` : the full URL where the app will be served, no trailing slash (e.g. `https://links.example.com`).
+   - `SESSION_SECRET` : a long random string used to sign PIN-unlock cookies. Generate one with:
      ```bash
      php -r "echo bin2hex(random_bytes(32));"
      ```
 
-   `config.php` is listed in `.gitignore` on purpose — never commit it.
+   `config.php` is listed in `.gitignore` on purpose : never commit it.
 
 4. **Set permissions**
 
@@ -76,7 +76,7 @@ To add a new language:
 2. Translate every value (keep the keys unchanged).
 3. Update `_meta.name` to the language's display name.
 
-That's it — the new language appears automatically in **Settings → Customize → Display**, no other code change required.
+That's it : the new language appears automatically in **Settings → Customize → Display**, no other code change required.
 
 ## Project structure
 
@@ -92,7 +92,7 @@ That's it — the new language appears automatically in **Settings → Customize
 │   ├── db.php                # PDO connection + shared helpers (i18n, rendering, settings)
 │   ├── auth.php              # Admin session management
 │   └── icons.php              # Inline SVG icons
-├── config.example.php       # Configuration template — copy to config.php
+├── config.example.php       # Configuration template : copy to config.php
 ├── install.sql               # Database schema + default admin seed
 ├── index.php                  # Public site
 ├── favicon.php                 # Local favicon cache/proxy
@@ -101,11 +101,11 @@ That's it — the new language appears automatically in **Settings → Customize
 
 ## Security notes
 
-- The default admin password (`admin`) must be changed on first login — the admin panel will keep warning you until you do.
+- The default admin password (`admin`) must be changed on first login : the admin panel will keep warning you until you do.
 - `config.php` is excluded from version control; never commit real credentials or your `SESSION_SECRET`.
 - Outbound URL fetching (metadata + favicons) is protected against SSRF: private/reserved IP ranges and non-HTTP(S) schemes are rejected.
-- PIN-protected categories use a signed, HttpOnly cookie with a configurable expiry — the PIN itself is never stored client-side.
+- PIN-protected categories use a signed, HttpOnly cookie with a configurable expiry : the PIN itself is never stored client-side.
 
 ## License
 
-This project doesn't ship with a license file yet — add one (MIT is a common choice for a project like this) before making the repository public if you want to clarify how others may use the code.
+This project doesn't ship with a license file yet : add one (MIT is a common choice for a project like this) before making the repository public if you want to clarify how others may use the code.
