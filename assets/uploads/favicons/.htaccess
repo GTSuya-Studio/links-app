@@ -1,0 +1,4 @@
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|cgi|sh|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

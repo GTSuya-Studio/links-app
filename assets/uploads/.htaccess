@@ -1,0 +1,5 @@
+# Allow read-only access to images only, block PHP execution
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|cgi|sh)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
