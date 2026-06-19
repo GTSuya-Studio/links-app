@@ -1,0 +1,15 @@
+# Local configuration with real credentials/secrets — never commit this
+config.php
+
+# User-uploaded content (site icon, cached favicons) — keep the
+# directories and their protective .htaccess, ignore everything else
+assets/uploads/*
+!assets/uploads/.htaccess
+!assets/uploads/favicons
+assets/uploads/favicons/*
+!assets/uploads/favicons/.htaccess
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
