@@ -17,6 +17,8 @@ A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/Maria
 - **JSON export** : back up all your categories, subcategories, and links in one click.
 - **No framework, no build step** : plain PHP 8, vanilla JS, hand-written CSS. Deploy by copying files to a web server.
 
+![Page d'accueil](.github/screenshots/settings.png)
+
 ## Requirements
 
 - PHP 8.0 or later, with the `pdo_mysql` and `curl` (or `allow_url_fopen`) extensions enabled.
