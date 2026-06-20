@@ -114,4 +114,4 @@ That's it : the new language appears automatically in **Settings → Customize �
 
 ## License
 
-This project doesn't ship with a license file yet : add one (MIT is a common choice for a project like this) before making the repository public if you want to clarify how others may use the code.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
