@@ -70,6 +70,8 @@ A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/Maria
 
    Visit `https://your-domain/admin/`, log in with the default password `admin`, and immediately change it from **Settings → Security**. While you're there, you can also set a PIN code for locked categories and pick your interface language.
 
+![Page d'accueil](.github/screenshots/security.png)
+
 ## Adding a language
 
 Translations live as plain PHP files in `includes/lang/`. Each file returns an associative array of translation keys, plus an optional `_meta.name` entry used as the display name in the language picker.
