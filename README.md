@@ -2,6 +2,8 @@
 
 A self-hosted, lightweight bookmark manager written in plain PHP and MySQL/MariaDB : no framework, no build step, no dependencies. Organize your links into categories and subcategories, optionally lock sensitive categories behind a PIN code, and browse everything through a clean, fast, searchable interface that works just as well on a phone as on a desktop.
 
+![Page d'accueil](.github/screenshots/home.png)
+
 ## Features
 
 - **Categories & subcategories** : organize links in a two-level hierarchy, fully drag-and-drop reorderable.
